@@ -10,14 +10,115 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       760,         33]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       900,         36]
-CellTagsIndexPosition[       857,         33]
+NotebookDataLength[      4450,        139]
+NotebookOptionsPosition[      3936,        122]
+NotebookOutlinePosition[      4275,        137]
+CellTagsIndexPosition[      4232,        134]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"gaugeAngles", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[Pi]"}], "/", "4"}], ",", "0", ",", 
+     RowBox[{"\[Pi]", "/", "4"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gaugeMeasurements", "=", 
+    RowBox[{"{", 
+     RowBox[{"100", ",", 
+      RowBox[{"-", "50"}], ",", "100"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Sigma]g", "=", 
+   RowBox[{"1", "+", 
+    RowBox[{"(", 
+     RowBox[{"gaugeMeasurements", "/", "1000"}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "\[Theta]_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"\[Epsilon]x", "*", 
+     RowBox[{
+      RowBox[{"Cos", "[", "\[Theta]", "]"}], "^", "2"}]}], "+", 
+    RowBox[{"\[Epsilon]y", "*", 
+     RowBox[{
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}]}], "+", 
+    RowBox[{"\[Gamma]", "*", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"e", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[Equal]", 
+     RowBox[{"#", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], "&"}], "/@", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"gaugeAngles", ",", "\[Sigma]g"}], "}"}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{"e", ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Epsilon]x", ",", "\[Epsilon]y", ",", "\[Gamma]"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.729625597418777*^9, 3.7296255994870377`*^9}, {
+  3.72962564841371*^9, 3.7296256533173923`*^9}, {3.7296265208483953`*^9, 
+  3.7296266533459997`*^9}, {3.729626694593178*^9, 3.7296267114978447`*^9}, {
+  3.729627180613298*^9, 3.729627190335384*^9}, {3.7296272332399807`*^9, 
+  3.729627238034789*^9}, {3.729627438834189*^9, 3.7296274420048113`*^9}, {
+  3.7296274736225863`*^9, 3.729627621677779*^9}, {3.729627664552359*^9, 
+  3.729627717637168*^9}},ExpressionUUID->"dcf5d2f6-67be-46ec-872a-\
+bb9780edeb7c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["\[Gamma]", "2"]}], "+", 
+     FractionBox["\[Epsilon]x", "2"], "+", 
+     FractionBox["\[Epsilon]y", "2"]}], "\[Equal]", 
+    FractionBox["11", "10"]}], ",", 
+   RowBox[{"\[Epsilon]x", "\[Equal]", 
+    FractionBox["19", "20"]}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox["\[Gamma]", "2"], "+", 
+     FractionBox["\[Epsilon]x", "2"], "+", 
+     FractionBox["\[Epsilon]y", "2"]}], "\[Equal]", 
+    FractionBox["11", "10"]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.72962762239795*^9, 3.729627671819881*^9, {3.7296277039821672`*^9, 
+   3.729627717889535*^9}},ExpressionUUID->"cc536d6e-12ad-4c5c-b717-\
+49a92e46a003"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Epsilon]x", "\[Rule]", 
+     FractionBox["19", "20"]}], ",", 
+    RowBox[{"\[Epsilon]y", "\[Rule]", 
+     FractionBox["5", "4"]}], ",", 
+    RowBox[{"\[Gamma]", "\[Rule]", "0"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.72962762239795*^9, 3.729627671819881*^9, {3.7296277039821672`*^9, 
+   3.7296277179076843`*^9}},ExpressionUUID->"1391af98-7459-4ce9-929a-\
+fe8b7dea4b0f"]
+}, Open  ]]
 },
 WindowSize->{1920, 1061},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -35,6 +136,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2154, 60, 170, "Input",ExpressionUUID->"dcf5d2f6-67be-46ec-872a-bb9780edeb7c"],
+Cell[2737, 84, 726, 21, 53, "Output",ExpressionUUID->"cc536d6e-12ad-4c5c-b717-49a92e46a003"],
+Cell[3466, 107, 454, 12, 53, "Output",ExpressionUUID->"1391af98-7459-4ce9-929a-fe8b7dea4b0f"]
+}, Open  ]]
 }
 ]
 *)
