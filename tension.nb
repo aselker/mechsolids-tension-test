@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4450,        139]
-NotebookOptionsPosition[      3936,        122]
-NotebookOutlinePosition[      4275,        137]
-CellTagsIndexPosition[      4232,        134]
+NotebookDataLength[      5889,        172]
+NotebookOptionsPosition[      5374,        155]
+NotebookOutlinePosition[      5713,        170]
+CellTagsIndexPosition[      5670,        167]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,11 +29,17 @@ Cell[BoxData[{
       RowBox[{"-", "\[Pi]"}], "/", "4"}], ",", "0", ",", 
      RowBox[{"\[Pi]", "/", "4"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"gaugeMeasurements", "=", 
+   RowBox[{"{", 
+    RowBox[{"100", ",", 
+     RowBox[{"-", "50"}], ",", "120"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"gaugeMeasurements", "=", 
-    RowBox[{"{", 
-     RowBox[{"100", ",", 
-      RowBox[{"-", "50"}], ",", "100"}], "}"}]}], ";"}], 
+   RowBox[{"young", "=", "100"}], ";"}], 
+  RowBox[{"(*", "GPa", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Nu]", "=", "0.3"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"\[Sigma]g", "=", 
@@ -68,18 +74,35 @@ Cell[BoxData[{
     RowBox[{"{", 
      RowBox[{"gaugeAngles", ",", "\[Sigma]g"}], "}"}], 
     "]"}]}]}], "\[IndentingNewLine]", 
- RowBox[{"Solve", "[", 
-  RowBox[{"e", ",", 
-   RowBox[{"{", 
-    RowBox[{"\[Epsilon]x", ",", "\[Epsilon]y", ",", "\[Gamma]"}], "}"}]}], 
-  "]"}]}], "Input",
+ RowBox[{
+  RowBox[{"\[Epsilon]", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\[Epsilon]x", ",", "\[Gamma]"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Gamma]", ",", "\[Epsilon]y"}], "}"}]}], "}"}], "/.", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{"e", ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Epsilon]x", ",", "\[Epsilon]y", ",", "\[Gamma]"}], "}"}]}],
+       "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", "\[Epsilon]"}], "Input",
  CellChangeTimes->{{3.729625597418777*^9, 3.7296255994870377`*^9}, {
-  3.72962564841371*^9, 3.7296256533173923`*^9}, {3.7296265208483953`*^9, 
-  3.7296266533459997`*^9}, {3.729626694593178*^9, 3.7296267114978447`*^9}, {
-  3.729627180613298*^9, 3.729627190335384*^9}, {3.7296272332399807`*^9, 
-  3.729627238034789*^9}, {3.729627438834189*^9, 3.7296274420048113`*^9}, {
-  3.7296274736225863`*^9, 3.729627621677779*^9}, {3.729627664552359*^9, 
-  3.729627717637168*^9}},ExpressionUUID->"dcf5d2f6-67be-46ec-872a-\
+   3.72962564841371*^9, 3.7296256533173923`*^9}, {3.7296265208483953`*^9, 
+   3.7296266533459997`*^9}, {3.729626694593178*^9, 3.7296267114978447`*^9}, {
+   3.729627180613298*^9, 3.729627190335384*^9}, {3.7296272332399807`*^9, 
+   3.729627238034789*^9}, {3.729627438834189*^9, 3.7296274420048113`*^9}, {
+   3.7296274736225863`*^9, 3.729627621677779*^9}, {3.729627664552359*^9, 
+   3.729627717637168*^9}, 3.729799248728147*^9, {3.72979928070127*^9, 
+   3.729799298177031*^9}, {3.7297993702818413`*^9, 3.72979939700956*^9}, {
+   3.7297995187089357`*^9, 3.7297995216294737`*^9}, {3.729800018880584*^9, 
+   3.729800090939838*^9}, {3.729800166467473*^9, 3.729800196493449*^9}, {
+   3.729967829355052*^9, 3.729967835220254*^9}, {3.729968028622785*^9, 
+   3.729968032874197*^9}},ExpressionUUID->"dcf5d2f6-67be-46ec-872a-\
 bb9780edeb7c"],
 
 Cell[BoxData[
@@ -99,25 +122,35 @@ Cell[BoxData[
      FractionBox["\[Gamma]", "2"], "+", 
      FractionBox["\[Epsilon]x", "2"], "+", 
      FractionBox["\[Epsilon]y", "2"]}], "\[Equal]", 
-    FractionBox["11", "10"]}]}], "}"}]], "Output",
+    FractionBox["28", "25"]}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.72962762239795*^9, 3.729627671819881*^9, {3.7296277039821672`*^9, 
-   3.729627717889535*^9}},ExpressionUUID->"cc536d6e-12ad-4c5c-b717-\
-49a92e46a003"],
+   3.729627717889535*^9}, 3.729799106760585*^9, {3.72979939040948*^9, 
+   3.729799398134919*^9}, {3.72980003509844*^9, 3.729800058540975*^9}, {
+   3.729800171023621*^9, 3.7298001967759447`*^9}, 3.7299676364187737`*^9, {
+   3.729967831061515*^9, 
+   3.729967835640473*^9}},ExpressionUUID->"fbf52e99-dd25-4203-a784-\
+6bebcc626577"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"\[Epsilon]x", "\[Rule]", 
-     FractionBox["19", "20"]}], ",", 
-    RowBox[{"\[Epsilon]y", "\[Rule]", 
-     FractionBox["5", "4"]}], ",", 
-    RowBox[{"\[Gamma]", "\[Rule]", "0"}]}], "}"}], "}"}]], "Output",
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["19", "20"], ",", 
+     FractionBox["1", "50"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "50"], ",", 
+     FractionBox["127", "100"]}], "}"}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.72962762239795*^9, 3.729627671819881*^9, {3.7296277039821672`*^9, 
-   3.7296277179076843`*^9}},ExpressionUUID->"1391af98-7459-4ce9-929a-\
-fe8b7dea4b0f"]
+   3.729627717889535*^9}, 3.729799106760585*^9, {3.72979939040948*^9, 
+   3.729799398134919*^9}, {3.72980003509844*^9, 3.729800058540975*^9}, {
+   3.729800171023621*^9, 3.7298001967759447`*^9}, 3.7299676364187737`*^9, {
+   3.729967831061515*^9, 
+   3.729967835642577*^9}},ExpressionUUID->"b0d97794-708f-4ae8-bb3b-\
+afd3f1eb7915"]
 }, Open  ]]
 },
 WindowSize->{1920, 1061},
@@ -137,9 +170,9 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2154, 60, 170, "Input",ExpressionUUID->"dcf5d2f6-67be-46ec-872a-bb9780edeb7c"],
-Cell[2737, 84, 726, 21, 53, "Output",ExpressionUUID->"cc536d6e-12ad-4c5c-b717-49a92e46a003"],
-Cell[3466, 107, 454, 12, 53, "Output",ExpressionUUID->"1391af98-7459-4ce9-929a-fe8b7dea4b0f"]
+Cell[580, 22, 3104, 83, 239, "Input",ExpressionUUID->"dcf5d2f6-67be-46ec-872a-bb9780edeb7c"],
+Cell[3687, 107, 972, 25, 53, "Output",ExpressionUUID->"fbf52e99-dd25-4203-a784-6bebcc626577"],
+Cell[4662, 134, 696, 18, 53, "Output",ExpressionUUID->"b0d97794-708f-4ae8-bb3b-afd3f1eb7915"]
 }, Open  ]]
 }
 ]
